@@ -1,2 +1,4 @@
 ﻿global using Microsoft.EntityFrameworkCore;
-global using CarWebsite.Data;
+global using GameWebsite.Models;
+global using GameWebsite.Data;
+

@@ -2,14 +2,14 @@
 
 namespace GameWebsite.Controllers
 {
-    public class Games : Controller
+    public class GamesController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult Create ()
         {
             return View();

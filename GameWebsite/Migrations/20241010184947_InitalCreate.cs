@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace GameWebsite.Migrations
 {
     /// <inheritdoc />
@@ -81,6 +83,30 @@ namespace GameWebsite.Migrations
                         principalTable: "devices",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Sports" },
+                    { 2, "Action" },
+                    { 3, "Adveture" },
+                    { 4, "Racing" },
+                    { 5, "Fighting" },
+                    { 6, "Film" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "devices",
+                columns: new[] { "Id", "Icon", "Name" },
+                values: new object[,]
+                {
+                    { 1, "bi bi-playstation", "PlayStation" },
+                    { 2, "bi bi-xbox", "xbox" },
+                    { 3, "bi bi-nintendo-switch", "Nintendo Switch" },
+                    { 4, "bi bi-pc-display", "PC" }
                 });
 
             migrationBuilder.CreateIndex(

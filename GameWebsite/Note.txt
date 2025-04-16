@@ -1,0 +1,37 @@
+﻿1 - ctor - tab - tab  for add constactor 
+2 - change your app themes for ex use that website (bootswatch) "bootstrab theams" 
+		2.1 - take file of ----.css.min to your project on wwwroot/css 
+		2.2 - add that file to your _layout.cshtml on head tag as link
+		2.3 - replase the file name in the link tag with the file name you added to your project of last old bootstrab exist 
+3 - for change font you have (googal font) enter on it and select all font you want 
+		3.1 - add the link to your _layout.cshtml on head tag
+		3.2 - add the font-family to your css file but before it >> * { font-family: 'font name'; }
+4 - change icon and title of page 
+5  - add the icon to your project from bootstrab website 
+			- first you should install bootstrap icon library
+				- in wwwroot in library select  > add > client side library > bootstrap icons
+				- take url of lib of icons.min.css and add it in your layout 		
+6 - for add icon to your project use (fontawesome) 
+		4.1 - add the link to your _layout.cshtml on head tag
+		4.2 - add the icon to your html file as <i class="fas fa-icon-name"></i>
+7 - to start with db first :
+		5.1 - download package to your app (EF - tools - sql server )
+		5.2 - add folder to add on it your ApplicationDbContext extend from dbcontext - add it's constractor
+		5.3 add your connection string in appsetting "ConnectionStrings": {"sqlConnection": " server=.; database=GameWebsite; Integrated Security=true;TrustServerCertificate=True"}
+		5.4 then go to progran and inject it to it 
+				var ConnectionString = builder.Configuration.GetConnectionString("sqlConnection") ??
+                                    throw new InvalidOperationException("There is no Db With that server");
+
+				builder.Services.AddDbContext<ApplicationDBContext>(options =>
+				options.UseSqlServer(ConnectionString));
+8 - you can add class for using all using as global .
+9 - for add migration :
+		7.1 - go to package manager console 
+		7.2 - write add-migration "name of migration"
+		7.3 - write update-database
+		7.4 - if you want to remove migration write remove-migration
+		8 - you can add data using data seading on on modeal creating
+10 -	
+
+    
+  

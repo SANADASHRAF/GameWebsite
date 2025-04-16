@@ -2,8 +2,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // add dbContext and connectionString
+
 var ConnectionString = builder.Configuration.GetConnectionString("sqlConnection") ??
-                                    throw new InvalidOperationException("There is no Db With that server");
+                              throw new InvalidOperationException("There is no Db With that server");
 
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 options.UseSqlServer(ConnectionString));

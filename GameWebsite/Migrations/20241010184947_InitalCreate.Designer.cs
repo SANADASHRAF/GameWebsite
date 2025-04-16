@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameWebsite.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241010183452_InitalCreate")]
+    [Migration("20241010184947_InitalCreate")]
     partial class InitalCreate
     {
         /// <inheritdoc />
@@ -39,6 +39,38 @@ namespace GameWebsite.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Sports"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Action"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Adveture"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Racing"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Fighting"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Film"
+                        });
                 });
 
             modelBuilder.Entity("GameWebsite.Models.Device", b =>
@@ -60,6 +92,32 @@ namespace GameWebsite.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("devices");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Icon = "bi bi-playstation",
+                            Name = "PlayStation"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Icon = "bi bi-xbox",
+                            Name = "xbox"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Icon = "bi bi-nintendo-switch",
+                            Name = "Nintendo Switch"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Icon = "bi bi-pc-display",
+                            Name = "PC"
+                        });
                 });
 
             modelBuilder.Entity("GameWebsite.Models.Game", b =>

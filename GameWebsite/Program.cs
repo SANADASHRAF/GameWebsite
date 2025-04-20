@@ -1,4 +1,6 @@
 
+using GameWebsite.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // add dbContext and connectionString
@@ -12,6 +14,8 @@ options.UseSqlServer(ConnectionString));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IDevicesServices, DevicesServices>();
+builder.Services.AddScoped<ICategoriesServices, CategoriesServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
